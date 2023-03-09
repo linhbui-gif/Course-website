@@ -1,0 +1,14 @@
+{
+    "corinthia": {
+        "normal": "D:\\laragon\\www\\king-study-develop\\vendor\\dompdf\\dompdf\/lib\/fonts\/Corinthia-Regular",
+        "bold": "D:\\laragon\\www\\king-study-develop\\vendor\\dompdf\\dompdf\/lib\/fonts\/Corinthia-Regular",
+        "italic": "D:\\laragon\\www\\king-study-develop\\vendor\\dompdf\\dompdf\/lib\/fonts\/Corinthia-Regular",
+        "bold_italic": "D:\\laragon\\www\\king-study-develop\\vendor\\dompdf\\dompdf\/lib\/fonts\/Corinthia-Regular"
+    },
+    "roboto": {
+        "normal": "D:\\laragon\\www\\king-study-develop\\vendor\\dompdf\\dompdf\/lib\/fonts\/Roboto-Regular",
+        "bold": "D:\\laragon\\www\\king-study-develop\\vendor\\dompdf\\dompdf\/lib\/fonts\/Roboto-Regular",
+        "italic": "D:\\laragon\\www\\king-study-develop\\vendor\\dompdf\\dompdf\/lib\/fonts\/Roboto-Regular",
+        "bold_italic": "D:\\laragon\\www\\king-study-develop\\vendor\\dompdf\\dompdf\/lib\/fonts\/Roboto-Regular"
+    }
+}
