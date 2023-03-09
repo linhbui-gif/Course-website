@@ -9,7 +9,7 @@
                 <br>
                 <div class="row">
                     <div class="col-lg-3 col-md-4 col-sm-4 text-center">
-                        <img class="large-img-rounded img-responsive" src="https://www.filepicker.io/api/file/su7jLanLRmmanlmn5RyO" alt="Mosh Hamedani">
+                        <img class="large-img-rounded img-responsive" src="{{asset('/frontend/assets/images/author.jpg')}}" alt="Mosh Hamedani">
                         <div class="author-name">
                             Đỗ Đức
                         </div>
