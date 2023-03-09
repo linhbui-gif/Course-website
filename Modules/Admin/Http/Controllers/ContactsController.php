@@ -56,8 +56,7 @@ class ContactsController extends Controller
         $params = $request->all();
         $limit = $request->get('limit',10);
 
-        $objects = Contacts::with('level_courses','school_of_contact:id,name','national_of_contact:id,name')
-                            ->where(['is_deleted' => 0])->paginate($limit);
+        $objects = Contacts::where(['is_deleted' => 0])->paginate($limit);
         $this->data['objects']  = $objects->toArray();
         return view("{$this->view}.index", $this->data);
     }

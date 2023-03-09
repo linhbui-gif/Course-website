@@ -17,10 +17,10 @@ class AdminController extends Controller
         $this->data['title']    = 'Dashboard';
         $params                 = $request->all();
         $students               = \DB::table('users')->count();
-        $schools                = \DB::table('school')->count();
+//        $schools                = \DB::table('school')->count();
         $profile_submited       = \DB::table('profile_submited')->count();
         $this->data['students'] = $students;
-        $this->data['schools']  = $schools;
+//        $this->data['schools']  = $schools;
         $this->data['profile_submited'] = $profile_submited;
         return view('admin::index',$this->data);
     }

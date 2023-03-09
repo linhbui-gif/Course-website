@@ -209,66 +209,66 @@ $ac = \App\Helpers\General::get_controller_action();
 {{--                            </a>--}}
 {{--                        </li>--}}
                         {{--  --}}
-                        @php
-                            $hp = Auth::has_permission(['admin::landing-page-position.index'], $user, $permissions);
-                        @endphp
-                        @if($hp)
-                            @php
-                                $landing_page_id = $ac['parameters']['landing_page_id'] ?? 0;
-                                $active = $ac['controller'] == 'LandingPagePositionController' && in_array($landing_page_id, [1, 2, 3, 4, 5, 6, 7]) ? 'active' : '';
-                                @endphp
-                            <li class="{{$active}}">
-                                <a href="#" aria-expanded="{{$active?'true':'false'}}">
-                                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                                    <span class="menu-title">Chuyên trang</span>
-                                    <i class="arrow"></i>
-                                </a>
+{{--                        @php--}}
+{{--                            $hp = Auth::has_permission(['admin::landing-page-position.index'], $user, $permissions);--}}
+{{--                        @endphp--}}
+{{--                        @if($hp)--}}
+{{--                            @php--}}
+{{--                                $landing_page_id = $ac['parameters']['landing_page_id'] ?? 0;--}}
+{{--                                $active = $ac['controller'] == 'LandingPagePositionController' && in_array($landing_page_id, [1, 2, 3, 4, 5, 6, 7]) ? 'active' : '';--}}
+{{--                                @endphp--}}
+{{--                            <li class="{{$active}}">--}}
+{{--                                <a href="#" aria-expanded="{{$active?'true':'false'}}">--}}
+{{--                                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>--}}
+{{--                                    <span class="menu-title">Chuyên trang</span>--}}
+{{--                                    <i class="arrow"></i>--}}
+{{--                                </a>--}}
 
-                                <ul class="collapse" aria-expanded="{{$active?'true':'false'}}">
-                                    @php
-                                        $sub_active = $ac['as'] == 'admin::landingPagePosition.index' && $landing_page_id == 1 ? 'active' : '';
-                                    @endphp
-                                    <li class="{{$sub_active}}">
-                                        <a href="{{ route('admin::landingPagePosition.index',['landing_page_id' => 1]) }}">
-                                            Trang chủ
-                                        </a>
-                                    </li>
-                                    @php
-                                    $sub_active = $ac['as'] == 'admin::landingPagePosition.index' && $landing_page_id == 3 ? 'active' : '';
-                                    @endphp
-                                    <li class="{{$sub_active}}">
-                                        <a href="{{ route('admin::landingPagePosition.index', ['landing_page_id' => 3]) }}">
-                                            Trang giới thiệu
-                                        </a>
-                                    </li>
-                                    @php
-                                    $sub_active = $ac['as'] == 'admin::landingPagePosition.index' && $landing_page_id == 4 ? 'active' : '';
-                                    @endphp
-                                    <li class="{{$sub_active}}">
-                                        <a href="{{ route('admin::landingPagePosition.index', ['landing_page_id' => 4]) }}">
-                                            Trang liên hệ
-                                        </a>
-                                    </li>
+{{--                                <ul class="collapse" aria-expanded="{{$active?'true':'false'}}">--}}
+{{--                                    @php--}}
+{{--                                        $sub_active = $ac['as'] == 'admin::landingPagePosition.index' && $landing_page_id == 1 ? 'active' : '';--}}
+{{--                                    @endphp--}}
+{{--                                    <li class="{{$sub_active}}">--}}
+{{--                                        <a href="{{ route('admin::landingPagePosition.index',['landing_page_id' => 1]) }}">--}}
+{{--                                            Trang chủ--}}
+{{--                                        </a>--}}
+{{--                                    </li>--}}
+{{--                                    @php--}}
+{{--                                    $sub_active = $ac['as'] == 'admin::landingPagePosition.index' && $landing_page_id == 3 ? 'active' : '';--}}
+{{--                                    @endphp--}}
+{{--                                    <li class="{{$sub_active}}">--}}
+{{--                                        <a href="{{ route('admin::landingPagePosition.index', ['landing_page_id' => 3]) }}">--}}
+{{--                                            Trang giới thiệu--}}
+{{--                                        </a>--}}
+{{--                                    </li>--}}
+{{--                                    @php--}}
+{{--                                    $sub_active = $ac['as'] == 'admin::landingPagePosition.index' && $landing_page_id == 4 ? 'active' : '';--}}
+{{--                                    @endphp--}}
+{{--                                    <li class="{{$sub_active}}">--}}
+{{--                                        <a href="{{ route('admin::landingPagePosition.index', ['landing_page_id' => 4]) }}">--}}
+{{--                                            Trang liên hệ--}}
+{{--                                        </a>--}}
+{{--                                    </li>--}}
 
-                                    @php
-                                        $sub_active = $ac['as'] == 'admin::landingPagePosition.index' && $landing_page_id == 7 ? 'active' : '';
-                                    @endphp
-                                    <li class="{{$sub_active}}">
-                                        <a href="{{ route('admin::landingPagePosition.index',['landing_page_id' => 7]) }}">
-                                            Hướng dẫn
-                                        </a>
-                                    </li>
-                                    @php
-                                        $sub_active = $ac['as'] == 'admin::landingPagePosition.index' && $landing_page_id == 8 ? 'active' : '';
-                                    @endphp
-                                    <li class="{{$sub_active}}">
-                                        <a href="{{ route('admin::landingPagePosition.index',['landing_page_id' => 8]) }}">
-                                            Điều khoản
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                        @endif
+{{--                                    @php--}}
+{{--                                        $sub_active = $ac['as'] == 'admin::landingPagePosition.index' && $landing_page_id == 7 ? 'active' : '';--}}
+{{--                                    @endphp--}}
+{{--                                    <li class="{{$sub_active}}">--}}
+{{--                                        <a href="{{ route('admin::landingPagePosition.index',['landing_page_id' => 7]) }}">--}}
+{{--                                            Hướng dẫn--}}
+{{--                                        </a>--}}
+{{--                                    </li>--}}
+{{--                                    @php--}}
+{{--                                        $sub_active = $ac['as'] == 'admin::landingPagePosition.index' && $landing_page_id == 8 ? 'active' : '';--}}
+{{--                                    @endphp--}}
+{{--                                    <li class="{{$sub_active}}">--}}
+{{--                                        <a href="{{ route('admin::landingPagePosition.index',['landing_page_id' => 8]) }}">--}}
+{{--                                            Điều khoản--}}
+{{--                                        </a>--}}
+{{--                                    </li>--}}
+{{--                                </ul>--}}
+{{--                            </li>--}}
+{{--                        @endif--}}
 
                         @php
                             $hp = Auth::has_permission(['admin::setting.meta-seo','admin::setting.index', 'admin::province.index'], $user, $permissions);

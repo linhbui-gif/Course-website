@@ -66,10 +66,8 @@ $permissions = Auth::get_permissions($user);
                         <th>Họ & tên</th>
                         <th>Số điện thoại</th>
                         <th>Email</th>
-                        <th>Quốc gia du học</th>
-                        <th>Trường</th>
-                        <th>Bậc học</th>
-                        <th>Ielts</th>
+                        <th>Tên khóa học</th>
+                        <th>Link Nhóm zalo khóa học</th>
                         <th>Ngày gửi</th>
                         {{-- <th>Chức năng</th> --}}
                     </tr>
@@ -79,17 +77,34 @@ $permissions = Auth::get_permissions($user);
                             @php
                             $pid = $item['id'];
                             $date = date('d/m/Y H:i:s', strtotime($item['created_at']));
+                            function checkNameCourse($value){
+                                switch ($value){
+                                    case 1 :
+                                        return "Khóa học PHP cơ bản";
+                                        case 1 :
+                                        return "Javascript nền tảng lập trình";
+                                        case 2 :
+                                        return "Khởi đầu với laravel";
+                                        case 3 :
+                                        return "NodeJS";
+                                        case 4 :
+                                        return "Master ReactJS";
+                                        case 5 :
+                                        return "Khóa học PHP nâng cao";
+                                        default:
+                                            return "";
+                                }
+                            }
                             @endphp
                         <tr data-tt-id="<?=$pid?>">
                             <td><?=@$item['name']?></td>
                             <td><?=@$item['phone']?></td>
                             <td><?=@$item['email']?></td>
-                            <td><?=@$item['national_of_contact']['name']?></td>
-                            <td>{{@$item['school_of_contact'] != null ? $item['school_of_contact']['name'] : "Chưa xác định" }}</td>
-                            <td><?=@$item['level_courses']['name']?></td>
-                            <td><?=@$item['ielts']?></td>
+                            <td><?= checkNameCourse(@$item['national']) ?></td>
+                            <td><?= @$item['link'] ?></td>
+
                             <td><?=$date?></td>
-                          
+
                         </tr>
                     @endforeach
                     </tbody>
