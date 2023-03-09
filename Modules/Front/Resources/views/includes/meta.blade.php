@@ -2,7 +2,7 @@
     <meta name="description" content="{{ $meta_description }}">
     <link rel="canonical" href="{{ $link }}"/>
 
-    <meta property="og:site_name" content="kingstudy.vn"/>
+    <meta property="og:site_name" content="golsoft.edu.vn"/>
     <meta property="og:type" content="website"/>
     <meta property="og:url" itemprop="url" content="{{ $link }}"/>
     <meta property="og:image" itemprop="thumbnailUrl" content="{{ $thumbnail }}"/>

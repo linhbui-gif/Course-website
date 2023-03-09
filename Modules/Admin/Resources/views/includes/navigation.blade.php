@@ -15,89 +15,56 @@ $ac = \App\Helpers\General::get_controller_action();
 
                     <ul id="mainnav-menu" class="list-group">
 
-                        @php
-                            $hp = Auth::has_permission('admin::dashboard.index', $user, $permissions);
-                            $active = $ac['controller'] == 'AdminController' ? 'active' : '';
-                        @endphp
-                        @if($hp)
-                            <li class="{{$active}}">
-                                <a href="{{ route('admin::dashboard.index') }}">
-                                    <i class="fa fa-home fa-sm" aria-hidden="true"></i>
-                                    <span class="menu-title">DASHBOARD</span>
-                                </a>
-                            </li>
-                        @endif
+{{--                        @php--}}
+{{--                            $hp = Auth::has_permission('admin::dashboard.index', $user, $permissions);--}}
+{{--                            $active = $ac['controller'] == 'AdminController' ? 'active' : '';--}}
+{{--                        @endphp--}}
+{{--                        @if($hp)--}}
+{{--                            <li class="{{$active}}">--}}
+{{--                                <a href="{{ route('admin::dashboard.index') }}">--}}
+{{--                                    <i class="fa fa-home fa-sm" aria-hidden="true"></i>--}}
+{{--                                    <span class="menu-title">DASHBOARD</span>--}}
+{{--                                </a>--}}
+{{--                            </li>--}}
+{{--                        @endif--}}
 
 
                         {{--  End Quản lý Banner --}}
-                        @php
-                            $hp = Auth::has_permission(['admin::news.index', 'admin::categoryNew.index',], $user, $permissions);
-                            $active = $ac['controller'] == 'NewsController' || $ac['controller'] == 'CategoryNewController' ? 'active' : '';
-                        @endphp
-                        @if($hp)
-                            <li class="{{$active}}">
-                                <a href="#">
-                                    <i class="fa fa-newspaper-o" aria-hidden="true"></i>
-                                    <span class="menu-title">Quản lý tin tức</span>
-                                    <i class="arrow"></i>
-                                </a>
+{{--                        @php--}}
+{{--                            $hp = Auth::has_permission(['admin::news.index', 'admin::categoryNew.index',], $user, $permissions);--}}
+{{--                            $active = $ac['controller'] == 'NewsController' || $ac['controller'] == 'CategoryNewController' ? 'active' : '';--}}
+{{--                        @endphp--}}
+{{--                        @if($hp)--}}
+{{--                            <li class="{{$active}}">--}}
+{{--                                <a href="#">--}}
+{{--                                    <i class="fa fa-newspaper-o" aria-hidden="true"></i>--}}
+{{--                                    <span class="menu-title">Quản lý tin tức</span>--}}
+{{--                                    <i class="arrow"></i>--}}
+{{--                                </a>--}}
 
-                                <!--Submenu-->
-                                <ul class="collapse">
-                                    @if(Auth::has_permission('admin::news.index', $user, $permissions))
-                                        @php
-                                            $sub_active = $ac['controller'] == 'NewsController' ? 'active' : '';
-                                        @endphp
-                                        <li class="{{$sub_active}}"><a href="{{ route('admin::news.index') }}">Danh sách tin tức</a></li>
-                                    @endif
+{{--                                <!--Submenu-->--}}
+{{--                                <ul class="collapse">--}}
+{{--                                    @if(Auth::has_permission('admin::news.index', $user, $permissions))--}}
+{{--                                        @php--}}
+{{--                                            $sub_active = $ac['controller'] == 'NewsController' ? 'active' : '';--}}
+{{--                                        @endphp--}}
+{{--                                        <li class="{{$sub_active}}"><a href="{{ route('admin::news.index') }}">Danh sách tin tức</a></li>--}}
+{{--                                    @endif--}}
 
-                                    @php
-                                        $hp = Auth::has_permission('admin::categoryNew.index', $user, $permissions);
-                                    @endphp
-                                    @if($hp)
-                                        @php
-                                            $sub_active = $ac['controller'] == 'CategoryNewController' ? 'active' : '';
-                                        @endphp
-                                        <li class="{{$sub_active}}"><a href="{{ route('admin::categoryNew.index') }}">Danh sách danh mục</a></li>
-                                    @endif
-                                </ul>
-                            </li>
-                        @endif
+{{--                                    @php--}}
+{{--                                        $hp = Auth::has_permission('admin::categoryNew.index', $user, $permissions);--}}
+{{--                                    @endphp--}}
+{{--                                    @if($hp)--}}
+{{--                                        @php--}}
+{{--                                            $sub_active = $ac['controller'] == 'CategoryNewController' ? 'active' : '';--}}
+{{--                                        @endphp--}}
+{{--                                        <li class="{{$sub_active}}"><a href="{{ route('admin::categoryNew.index') }}">Danh sách danh mục</a></li>--}}
+{{--                                    @endif--}}
+{{--                                </ul>--}}
+{{--                            </li>--}}
+{{--                        @endif--}}
 
 
-                        @php
-                            $hp = Auth::has_permission(['adminauth::user.index', 'adminauth::role.index',], $user, $permissions);
-                            $active = $ac['controller'] == 'UserController' || $ac['controller'] == 'RoleController' ? 'active' : '';
-                        @endphp
-                        @if($hp)
-                            <li class="{{$active}}">
-                                <a href="#">
-                                    <i class="fa fa-sitemap" aria-hidden="true"></i>
-                                    <span class="menu-title">Phân quyền</span>
-                                    <i class="arrow"></i>
-                                </a>
-
-                                <!--Submenu-->
-                                <ul class="collapse">
-                                    @if(Auth::has_permission('adminauth::user.index', $user, $permissions))
-                                        @php
-                                            $sub_active = $ac['controller'] == 'UserController' ? 'active' : '';
-                                        @endphp
-                                        <li class="{{$sub_active}}"><a href="{{ route('adminauth::user.index') }}">Người dùng CMS</a></li>
-                                    @endif
-
-                                    @php
-                                        $hp = Auth::has_permission('adminauth::role.getShowAll', $user, $permissions);
-                                    @endphp
-                                    @if($hp)
-                                        @php
-                                            $sub_active = $ac['controller'] == 'RoleController' ? 'active' : '';
-                                        @endphp
-                                        <li class="{{$sub_active}}"><a href="{{ route('adminauth::role.getShowAll') }}">Phân quyền</a></li>
-                                    @endif
-                                </ul>
-                            </li>
-                        @endif
 
                         @php
                             $hp = Auth::has_permission('admin::banner.index', $user, $permissions);
@@ -112,18 +79,18 @@ $ac = \App\Helpers\General::get_controller_action();
                             </li>
                         @endif
 {{--                        Quanr lý học viên--}}
-                        @php
-                            $hp = Auth::has_permission('adminauth::student.index', $user, $permissions);
-                            $active = $ac['controller'] == 'StudentController' ? 'active' : '';
-                        @endphp
-                        @if($hp)
-                            <li class="{{$active}}">
-                                <a href="{{ route('adminauth::student.index') }}">
-                                    <i class="fa fa-user-circle" aria-hidden="true"></i>
-                                    <span class="menu-title">Quản lý Học viên</span>
-                                </a>
-                            </li>
-                        @endif
+{{--                        @php--}}
+{{--                            $hp = Auth::has_permission('adminauth::student.index', $user, $permissions);--}}
+{{--                            $active = $ac['controller'] == 'StudentController' ? 'active' : '';--}}
+{{--                        @endphp--}}
+{{--                        @if($hp)--}}
+{{--                            <li class="{{$active}}">--}}
+{{--                                <a href="{{ route('adminauth::student.index') }}">--}}
+{{--                                    <i class="fa fa-user-circle" aria-hidden="true"></i>--}}
+{{--                                    <span class="menu-title">Quản lý Học viên</span>--}}
+{{--                                </a>--}}
+{{--                            </li>--}}
+{{--                        @endif--}}
                         {{-- Contact --}}
                         @php
                             $hp = Auth::has_permission('admin::contacts.index', $user, $permissions);
@@ -138,87 +105,87 @@ $ac = \App\Helpers\General::get_controller_action();
                             </li>
                         @endif
                         {{-- Khóa học --}}
-                        @php
-                            $hp = Auth::has_permission('admin::course.index', $user, $permissions);
-                            $active = $ac['controller'] == 'CourseController' ? 'active' : '';
-                        @endphp
-                        <li class="{{$active}}">
-                            <a href="{{ route('admin::course.index') }}">
-                                <i class="fa fa-bookmark" aria-hidden="true"></i>
-                                <span class="menu-title">Khóa học</span>
-                            </a>
-                        </li>
-                        {{--  --}}
-                        {{-- Bậc học --}}
-                        @php
-                            $hp = Auth::has_permission('admin::levelCourse.index', $user, $permissions);
-                            $active = $ac['controller'] == 'LevelCourseController' ? 'active' : '';
-                        @endphp
-                        <li class="{{$active}}">
-                            <a href="{{ route('admin::levelCourse.index') }}">
-                                <i class="fa fa-level-up" aria-hidden="true"></i>
-                                <span class="menu-title">Bậc học</span>
-                            </a>
-                        </li>
+{{--                        @php--}}
+{{--                            $hp = Auth::has_permission('admin::course.index', $user, $permissions);--}}
+{{--                            $active = $ac['controller'] == 'CourseController' ? 'active' : '';--}}
+{{--                        @endphp--}}
+{{--                        <li class="{{$active}}">--}}
+{{--                            <a href="{{ route('admin::course.index') }}">--}}
+{{--                                <i class="fa fa-bookmark" aria-hidden="true"></i>--}}
+{{--                                <span class="menu-title">Khóa học</span>--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
+{{--                        --}}{{--  --}}
+{{--                        --}}{{-- Bậc học --}}
+{{--                        @php--}}
+{{--                            $hp = Auth::has_permission('admin::levelCourse.index', $user, $permissions);--}}
+{{--                            $active = $ac['controller'] == 'LevelCourseController' ? 'active' : '';--}}
+{{--                        @endphp--}}
+{{--                        <li class="{{$active}}">--}}
+{{--                            <a href="{{ route('admin::levelCourse.index') }}">--}}
+{{--                                <i class="fa fa-level-up" aria-hidden="true"></i>--}}
+{{--                                <span class="menu-title">Bậc học</span>--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
                         {{--  --}}
                         {{-- Ngành học --}}
-                        @php
-                            $hp = Auth::has_permission('admin::majors.index', $user, $permissions);
-                            $active = $ac['controller'] == 'MajorsController' ? 'active' : '';
-                        @endphp
-                        <li class="{{$active}}">
-                            <a href="{{ route('admin::majors.index') }}">
-                                <i class="fa fa-book" aria-hidden="true"></i>
-                                <span class="menu-title">Ngành học</span>
-                            </a>
-                        </li>
-                        {{--  --}}
-                        {{-- Trường học --}}
-                        @php
-                            $hp = Auth::has_permission('admin::school.index', $user, $permissions);
-                            $active = $ac['controller'] == 'SchoolController' ? 'active' : '';
-                        @endphp
-                        <li class="{{$active}}">
-                            <a href="{{ route('admin::school.index') }}">
-                                <i class="fa fa-graduation-cap" aria-hidden="true"></i>
-                                <span class="menu-title">Trường học</span>
-                            </a>
-                        </li>
-                        {{--  --}}
-                        @php
-                            $hp = Auth::has_permission('admin::ranking.index', $user, $permissions);
-                            $active = $ac['controller'] == 'RankingController' ? 'active' : '';
-                        @endphp
-                        <li class="{{$active}}">
-                            <a href="{{ route('admin::ranking.index') }}">
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <span class="menu-title">Ranking</span>
-                            </a>
-                        </li>
-                        {{--  --}}
-                        {{-- Country --}}
-                        @php
-                            // $hp = Auth::has_permission('admin::country.index', $user, $permissions);
-                            $active = $ac['controller'] == 'CountryController' ? 'active' : '';
-                        @endphp
-                        <li class="{{$active}}">
-                            <a href="{{ route('admin::country.index') }}">
-                                <i class="fa fa-globe" aria-hidden="true"></i>
-                                <span class="menu-title">Country</span>
-                            </a>
-                        </li>
-                        {{--  --}}
-                        {{-- Study Abroad --}}
-                        @php
-                            // $hp = Auth::has_permission('admin::country.index', $user, $permissions);
-                            $active = $ac['controller'] == 'StudyAbroadController' ? 'active' : '';
-                        @endphp
-                        <li class="{{$active}}">
-                            <a href="{{ route('admin::studyAbroad.index') }}">
-                                <i class="fa fa-globe" aria-hidden="true"></i>
-                                <span class="menu-title">Quốc gia du học</span>
-                            </a>
-                        </li>
+{{--                        @php--}}
+{{--                            $hp = Auth::has_permission('admin::majors.index', $user, $permissions);--}}
+{{--                            $active = $ac['controller'] == 'MajorsController' ? 'active' : '';--}}
+{{--                        @endphp--}}
+{{--                        <li class="{{$active}}">--}}
+{{--                            <a href="{{ route('admin::majors.index') }}">--}}
+{{--                                <i class="fa fa-book" aria-hidden="true"></i>--}}
+{{--                                <span class="menu-title">Ngành học</span>--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
+{{--                        --}}{{--  --}}
+{{--                        --}}{{-- Trường học --}}
+{{--                        @php--}}
+{{--                            $hp = Auth::has_permission('admin::school.index', $user, $permissions);--}}
+{{--                            $active = $ac['controller'] == 'SchoolController' ? 'active' : '';--}}
+{{--                        @endphp--}}
+{{--                        <li class="{{$active}}">--}}
+{{--                            <a href="{{ route('admin::school.index') }}">--}}
+{{--                                <i class="fa fa-graduation-cap" aria-hidden="true"></i>--}}
+{{--                                <span class="menu-title">Trường học</span>--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
+{{--                        --}}{{--  --}}
+{{--                        @php--}}
+{{--                            $hp = Auth::has_permission('admin::ranking.index', $user, $permissions);--}}
+{{--                            $active = $ac['controller'] == 'RankingController' ? 'active' : '';--}}
+{{--                        @endphp--}}
+{{--                        <li class="{{$active}}">--}}
+{{--                            <a href="{{ route('admin::ranking.index') }}">--}}
+{{--                                <i class="fa fa-star" aria-hidden="true"></i>--}}
+{{--                                <span class="menu-title">Ranking</span>--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
+{{--                        --}}{{--  --}}
+{{--                        --}}{{-- Country --}}
+{{--                        @php--}}
+{{--                            // $hp = Auth::has_permission('admin::country.index', $user, $permissions);--}}
+{{--                            $active = $ac['controller'] == 'CountryController' ? 'active' : '';--}}
+{{--                        @endphp--}}
+{{--                        <li class="{{$active}}">--}}
+{{--                            <a href="{{ route('admin::country.index') }}">--}}
+{{--                                <i class="fa fa-globe" aria-hidden="true"></i>--}}
+{{--                                <span class="menu-title">Country</span>--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
+{{--                        --}}{{--  --}}
+{{--                        --}}{{-- Study Abroad --}}
+{{--                        @php--}}
+{{--                            // $hp = Auth::has_permission('admin::country.index', $user, $permissions);--}}
+{{--                            $active = $ac['controller'] == 'StudyAbroadController' ? 'active' : '';--}}
+{{--                        @endphp--}}
+{{--                        <li class="{{$active}}">--}}
+{{--                            <a href="{{ route('admin::studyAbroad.index') }}">--}}
+{{--                                <i class="fa fa-globe" aria-hidden="true"></i>--}}
+{{--                                <span class="menu-title">Quốc gia du học</span>--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
                         {{--  --}}
                         {{-- Menu --}}
                         @php
@@ -231,16 +198,16 @@ $ac = \App\Helpers\General::get_controller_action();
                                 <span class="menu-title">Menus</span>
                             </a>
                         </li>
-                        @php
+{{--                        @php--}}
 
-                            $active = $ac['controller'] == 'WidgetController' ? 'active' : '';
-                        @endphp
-                        <li class="{{$active}}">
-                            <a href="{{ route('admin::widget.index') }}">
-                                <i class="fa fa-bars" aria-hidden="true"></i>
-                                <span class="menu-title">Widget</span>
-                            </a>
-                        </li>
+{{--                            $active = $ac['controller'] == 'WidgetController' ? 'active' : '';--}}
+{{--                        @endphp--}}
+{{--                        <li class="{{$active}}">--}}
+{{--                            <a href="{{ route('admin::widget.index') }}">--}}
+{{--                                <i class="fa fa-bars" aria-hidden="true"></i>--}}
+{{--                                <span class="menu-title">Widget</span>--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
                         {{--  --}}
                         @php
                             $hp = Auth::has_permission(['admin::landing-page-position.index'], $user, $permissions);
@@ -334,17 +301,51 @@ $ac = \App\Helpers\General::get_controller_action();
                                         <li class="{{$sub_active}}"><a href="{{ route('admin::setting.index') }}">Cấu hình</a></li>
                                     @endif
 
-                                        @php
-                                            $hp = Auth::has_permission('admin::province.index', $user, $permissions);
-                                            $active = $ac['controller'] == 'ProvinceController' ? 'active' : '';
-                                        @endphp
-                                        @if($hp)
-                                            <li class="{{$active}}">
-                                                <a href="{{ route('admin::province.index') }}">Tỉnh thành</a>
-                                            </li>
-                                        @endif
+{{--                                        @php--}}
+{{--                                            $hp = Auth::has_permission('admin::province.index', $user, $permissions);--}}
+{{--                                            $active = $ac['controller'] == 'ProvinceController' ? 'active' : '';--}}
+{{--                                        @endphp--}}
+{{--                                        @if($hp)--}}
+{{--                                            <li class="{{$active}}">--}}
+{{--                                                <a href="{{ route('admin::province.index') }}">Tỉnh thành</a>--}}
+{{--                                            </li>--}}
+{{--                                        @endif--}}
                                 </ul>
                         @endif
+                        @php
+                            $hp = Auth::has_permission(['adminauth::user.index', 'adminauth::role.index',], $user, $permissions);
+                            $active = $ac['controller'] == 'UserController' || $ac['controller'] == 'RoleController' ? 'active' : '';
+                        @endphp
+                        @if($hp)
+                            <li class="{{$active}}">
+                                <a href="#">
+                                    <i class="fa fa-sitemap" aria-hidden="true"></i>
+                                    <span class="menu-title">Phân quyền</span>
+                                    <i class="arrow"></i>
+                                </a>
+
+                                <!--Submenu-->
+                                <ul class="collapse">
+                                    @if(Auth::has_permission('adminauth::user.index', $user, $permissions))
+                                        @php
+                                            $sub_active = $ac['controller'] == 'UserController' ? 'active' : '';
+                                        @endphp
+                                        <li class="{{$sub_active}}"><a href="{{ route('adminauth::user.index') }}">Người dùng CMS</a></li>
+                                    @endif
+
+                                    @php
+                                        $hp = Auth::has_permission('adminauth::role.getShowAll', $user, $permissions);
+                                    @endphp
+                                    @if($hp)
+                                        @php
+                                            $sub_active = $ac['controller'] == 'RoleController' ? 'active' : '';
+                                        @endphp
+                                        <li class="{{$sub_active}}"><a href="{{ route('adminauth::role.getShowAll') }}">Phân quyền</a></li>
+                                    @endif
+                                </ul>
+                            </li>
+                        @endif
+
                     </ul>
                 </div>
             </div>

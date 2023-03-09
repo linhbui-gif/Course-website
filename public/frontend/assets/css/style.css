@@ -1,0 +1,321 @@
+ul, li {
+  list-style: none; }
+
+a {
+  text-decoration: none; }
+
+body {
+  font-family: 'Nunito', sans-serif; }
+
+.header_top {
+  flex-wrap: wrap; }
+  @media (max-width: 991px) {
+    .header_top-list {
+      padding-left: 0;
+      width: 100%;
+      flex-wrap: wrap;
+      max-height: 0;
+      overflow: hidden;
+      transition: .5s; }
+      .header_top-list.show {
+        max-height: 100vh; }
+      .header_top-list .list_item {
+        width: 100%; }
+        .header_top-list .list_item:last-child {
+          display: none; }
+        .header_top-list .list_item-link {
+          width: 100%;
+          display: block; } }
+  .header_top-list .list_item-link {
+    color: #707070;
+    font-size: 15px;
+    cursor: pointer;
+    font-weight: 400;
+    padding: 10px 15px; }
+
+.course-detail {
+  padding: 80px;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 33px; }
+  @media (max-width: 991px) {
+    .course-detail {
+      padding: 40px 0; } }
+  .course-detail h2 {
+    margin-bottom: 30px;
+    line-height: 40px;
+    font-size: 30px; }
+  .course-detail p {
+    font-weight: 400;
+    line-height: 1.5;
+    color: #333; }
+  .course-detail .features {
+    padding-top: 20px;
+    border-radius: 5px;
+    background: #fb4d44; }
+    .course-detail .features ul {
+      list-style: none;
+      background: #fafafa;
+      padding: 20px; }
+      .course-detail .features ul li {
+        margin-bottom: 20px;
+        color: #232323;
+        text-transform: uppercase;
+        font-weight: 600; }
+        .course-detail .features ul li .glyphicon {
+          font-size: 20px;
+          padding: 9px;
+          border-radius: 100%;
+          background: #919191;
+          color: #fff;
+          margin-right: 10px;
+          vertical-align: middle; }
+
+.btstrp-navbar-toggle {
+  position: relative;
+  padding: 9px 10px;
+  margin-top: 14px;
+  margin-right: 15px;
+  margin-bottom: 8px;
+  background-color: transparent;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  display: none; }
+  @media (max-width: 991px) {
+    .btstrp-navbar-toggle {
+      display: block; } }
+  .btstrp-navbar-toggle:focus {
+    outline: none; }
+  .btstrp-navbar-toggle .btstrp-sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0; }
+  .btstrp-navbar-toggle .btstrp-icon-bar {
+    display: block;
+    width: 22px;
+    height: 2px;
+    border-radius: 1px;
+    background-color: #707070; }
+  .btstrp-navbar-toggle .btstrp-icon-bar + .btstrp-icon-bar {
+    margin-top: 4px; }
+
+.Modal {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    pointer-events: none;
+    /* padding: 4rem; */
+    opacity: 0;
+    visibility: hidden;
+    transition: .5s;
+    z-index: -1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Modal.active {
+    pointer-events: unset;
+    opacity: 1;
+    visibility: visible;
+    z-index: 99;
+}
+
+.Modal.active .Modal-overlay {
+    opacity: .9;
+    visibility: visible;
+}
+
+.Modal.active .Modal-main {
+    opacity: 1;
+    transform: translateY(0)
+}
+
+.Modal-overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transition: .3s ease;
+    background: #000;
+    opacity: 0;
+    visibility: hidden;
+    z-index: -1;
+}
+
+.Modal-main {
+    position: relative;
+    z-index: 2;
+    transition: .3s ease;
+    width: 560px;
+    opacity: 0;
+    transform: translateY(10%);
+}
+
+.Modal-header {
+    position: relative;
+    padding: 1.2rem;
+    font-size: 18px;
+    color: #222;
+    text-align: center;
+    background: white;
+}
+
+.Modal-header-close {
+    position: absolute;
+    right: 0.8rem;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 2;
+    /* width: 3rem; */
+    height: 3rem;
+}
+
+.Modal-header-close img {
+
+}
+
+.Modal-body {
+    background: #fff;
+    padding: 1rem
+}
+.form-group .label{
+    margin-bottom: 15px;
+    letter-spacing: .6px;
+}
+.label {
+    /* padding: 0.2em 0.6em 0.3em; */
+    font-weight: 600;
+    text-align: left;
+    padding: 0;
+    white-space: nowrap;
+    vertical-align: baseline;
+    color: #858585;
+    display: block;
+    font-family: rm,sans-serif;
+    font-size: 14px;
+    letter-spacing: .16rem;
+    line-height: normal;
+    text-transform: uppercase;
+}
+@media screen and (max-width: 767px)
+{
+    .Modal-main {
+        max-width: 420px;
+        width: calc(100% - 30px);
+    }
+}
+input.form-control.error {
+    border-color: #dc1414;
+}
+.error,.require {
+    color: #dc1414;
+    font-size: 14px;
+}
+.ring
+{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:150px;
+    height:150px;
+    background:transparent;
+    border:3px solid #3c3c3c;
+    border-radius:50%;
+    text-align:center;
+    line-height:150px;
+    font-family:sans-serif;
+    font-size:20px;
+    color:#fff000;
+    letter-spacing:4px;
+    text-transform:uppercase;
+    text-shadow:0 0 10px #fff000;
+    box-shadow:0 0 20px rgba(0,0,0,.5);
+}
+.ring:before
+{
+    content:'';
+    position:absolute;
+    top:-3px;
+    left:-3px;
+    width:100%;
+    height:100%;
+    border:3px solid transparent;
+    border-top:3px solid #fff000;
+    border-right:3px solid #fff000;
+    border-radius:50%;
+    animation:animateC 2s linear infinite;
+}
+.ring span
+{
+    display:block;
+    position:absolute;
+    top:calc(50% - 2px);
+    left:50%;
+    width:50%;
+    height:4px;
+    background:transparent;
+    transform-origin:left;
+    animation:animate 2s linear infinite;
+}
+.ring span:before
+{
+    content:'';
+    position:absolute;
+    width:16px;
+    height:16px;
+    border-radius:50%;
+    background:#fff000;
+    top:-6px;
+    right:-8px;
+    box-shadow:0 0 20px #fff000;
+}
+@keyframes animateC
+{
+    0%
+    {
+        transform:rotate(0deg);
+    }
+    100%
+    {
+        transform:rotate(360deg);
+    }
+}
+@keyframes animate
+{
+    0%
+    {
+        transform:rotate(45deg);
+    }
+    100%
+    {
+        transform:rotate(405deg);
+    }
+}
+#bg-load{
+    background: #000000a6;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+    top: 0;
+}
+input.form-control{
+    margin-bottom: 0;
+}
+
+/*# sourceMappingURL=style.css.map */

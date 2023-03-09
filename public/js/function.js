@@ -150,7 +150,7 @@ function SetFileField(fileUrl, data) {
 
 function ajax_loading(show) {
     if ($('#bg-load').length == 0) {
-        $('body').append('<div id="bg-load" class="wrap-loader"><div id="container"><div id="loader" class="loader"></div></div></div>');
+        $('body').append('<div id="bg-load"><div class="ring">Loading<span></span></div></div>');
     }
     if (show) {
         $('#bg-load').show();

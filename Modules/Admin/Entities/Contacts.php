@@ -14,7 +14,7 @@ class Contacts extends BaseModel
      *
      * @var array
      */
-    protected $fillable = ['name','phone','email','national','ielts','level_course','school_id'];
+    protected $fillable = ['name','phone','email','national','link'];
 
     /**
      * The attributes that should be hidden for arrays.
