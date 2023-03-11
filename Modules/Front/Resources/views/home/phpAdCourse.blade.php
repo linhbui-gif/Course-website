@@ -2,7 +2,7 @@
 
 @section('content')
     <div id="blocks" data-ss-school-id='146684' class="blocks-page blocks-page-course_sales_page ">
-        <div class="course-top-row has-hero-image" style="#fb4d44;">
+        <div class="course-top-row has-hero-image" style="background:#fb4d44">
             <div class="black-overlay" style="opacity: 0;">&nbsp;</div>
             <div class="container">
                 <div class="row">

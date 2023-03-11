@@ -15,7 +15,7 @@
                         </div>
                     </div>
                     <div class="col-lg-9 col-md-8 col-sm-8">
-                        <p>Xin chào! Tôi là Đỗ Đức - FullStack Developer, Trong hơn 10 năm kinh nghiệm trong nghề, tôi luôn tạo ra những sản phẩm chất lượng cao, tối ưu và phù hợp cho khách hàng trong và ngoài nước, cũng như mong muốn truyền đạt lại cho các bạn trẻ có đam mê và định hướng theo nghề Back-end Developer.
+                        <p>Xin chào! Tôi là Đỗ Đức - FullStack Developer, Trong hơn 10 năm kinh nghiệm trong nghề, tôi luôn tạo ra những sản phẩm chất lượng cao, tối ưu và phù hợp cho khách hàng trong và ngoài nước, cũng như mong muốn truyền đạt lại cho các bạn trẻ có đam mê và định hướng theo nghề Full-stack Developer.
                         </p>
                     </div>
                 </div>
